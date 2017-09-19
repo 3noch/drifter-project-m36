@@ -1,0 +1,44 @@
+name:                drifter-project-m36
+version:             0.0.0.1
+synopsis:
+  Drifter migration backend for Project: M36 databases.
+description:
+  This package provides a Drifter migration backend for the awesome database Project: M36.
+  .
+  This package is maintained by Grafted-In (<https://www.graftedin.io/>).
+homepage:            https://github.com/3noch/drifter-project-m36
+license:             BSD3
+license-file:        LICENSE
+author:              Elliot Cameron
+maintainer:          elliot@graftedin.io
+copyright:           2017 Elliot Cameron and Grafted-In, LLC
+category:            Database
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.0.2
+extra-source-files:
+  CHANGELOG.md
+  README.md
+
+library
+  hs-source-dirs: src
+  ghc-options:
+    -Wall -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-do-bind
+    -O2
+
+  build-depends:
+    base,
+    bytestring,
+    containers,
+    drifter,
+    project-m36 >= 0.2 && < 0.3,
+    text,
+    time,
+    vector
+
+  exposed-modules:
+      Drifter.ProjectM36
+      Drifter.ProjectM36.RelSchema
+
+  default-language: Haskell2010
